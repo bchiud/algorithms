@@ -1,0 +1,15 @@
+### Useful ###
+
+Insert Live Template:   Cmd + J
+Preferences:            Cmd + ,
+Search Everywhere:      Shift + Shift
+Reformat Code:          Cmd + Opt + L
+Run:                    Ctrl + R
+Run Anything:           Ctrl + Ctrl
+Toggle Run Window:      Cmd + 4
+
+
+
+### Others ###
+
+Project Structure:      Cmd + ;
