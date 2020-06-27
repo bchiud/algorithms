@@ -1,4 +1,4 @@
-package com.bradychiu.algs4.com.bradychiu.algs4.unionfind;
+package com.bradychiu.algs4.unionfind;
 
 public class QuickUnion {
     private int[] storage;
