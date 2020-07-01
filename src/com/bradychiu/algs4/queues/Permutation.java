@@ -12,14 +12,12 @@ public class Permutation {
         if (k != 0) {
             while (!StdIn.isEmpty()) {
                 String s = StdIn.readString();
-
                 miRandomizedQueue.enqueue(s);
             }
         }
 
-        while (k != 0) {
+        for (int i = 0; i < k; i++) {
             StdOut.println(miRandomizedQueue.dequeue());
-            k--;
         }
     }
 }
