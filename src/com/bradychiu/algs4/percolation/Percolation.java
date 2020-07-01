@@ -16,7 +16,7 @@ public class Percolation {
     private final int sites;
     private final WeightedQuickUnionUF quf;
 
-    private boolean[][] grid; // true as open, false as blocked
+    private boolean[][] grid;
     private int opens;
 
     // creates n-by-n grid, with all sites initially blocked
