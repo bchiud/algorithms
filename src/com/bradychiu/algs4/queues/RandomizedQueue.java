@@ -141,6 +141,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         StdOut.println("size() check:\t\t\t" + ((miRandomizedQueue.size() == trueSize)));
 
         Iterator<Integer> iter = miRandomizedQueue.iterator();
+        StdOut.println("iter.hasNext() check:\t" + ((iter.hasNext())));
         for (int i = 0; i < trueSize; i++) {
             StdOut.println("iter.next() check:\t\t" + iter.next());
         }

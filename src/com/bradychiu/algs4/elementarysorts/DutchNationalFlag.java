@@ -21,7 +21,7 @@ public class DutchNationalFlag {
         int red = 0;
         int blue = pebbles.length - 1;
         int i = 0;
-        while ( i < blue) {
+        while ( i <= blue) {
             if(color(i) == Pebble.Red) {
                 swap(red++, i);
             } else if (color(i) == Pebble.Blue) {
@@ -29,6 +29,7 @@ public class DutchNationalFlag {
             } else {
                 i++;
             }
+            StdOut.println(red + "," + i + "," + blue);
         }
     }
 

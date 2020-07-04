@@ -1,47 +1,47 @@
 package com.bradychiu.algs4.queues;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.*;
 
 import java.util.Iterator;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 class RandomizedQueueTest {
+    private static RandomizedQueue<Integer> q;
 
-    private int testSize;
-    private int halfTestSize;
-    private RandomizedQueue<Integer> q;
-
-    @Before
-    void setUp() {
-        testSize = 10;
-        halfTestSize = testSize / 2;
+    @BeforeAll
+    static void setUp() {
         q = new RandomizedQueue<>();
     }
 
-    @After
-    void tearDown() {
-        testSize = halfTestSize = Integer.parseInt(null);
-        q = null;
-        assertNull(testSize);
-        assertNull(halfTestSize);
-        assertNull(q);
+    @BeforeEach
+    void init() {
+        assertEquals(0, q.size());
+    }
+
+    @AfterEach
+    void cleanup() {
+        int n = q.size();
+        for (int i = 0; i < n; i++) {
+            q.dequeue();
+        }
+    }
+
+    @AfterAll
+    static void tearDown() {
     }
 
     @Test
-    void isEmpty() {
+    public void isEmpty() {
+        assertEquals(true, q.isEmpty());
         q.enqueue(1);
         q.dequeue();
-        assertEquals(0, q.size());
+        assertEquals(true, q.isEmpty());
     }
 
     @Test
     void size() {
         assertEquals(0, q.size());
-        q.enqueue(0);
-        assertEquals(1, q.size());
     }
 
     @Test
@@ -52,8 +52,8 @@ class RandomizedQueueTest {
 
     @Test
     void dequeue() {
-        q.enqueue(0);
-        q.dequeue();
+        q.enqueue(1);
+        assertEquals(1, q.dequeue());
         assertEquals(0, q.size());
     }
 
@@ -61,10 +61,7 @@ class RandomizedQueueTest {
     void sample() {
         assertEquals(0, q.size());
         q.enqueue(1);
-        assertEquals(1, q.size());
-        int i = q.sample();
-        assertEquals(1, i);
-        assertEquals(1, q.size());
+        assertEquals(1, q.sample());
     }
 
     @Test
@@ -72,14 +69,13 @@ class RandomizedQueueTest {
         int nums = 3;
         int trueSum = 0;
         int testSum = 0;
-        Iterator<Integer> iter = q.iterator();
 
         for (int i = 0; i < nums; i++) {
             trueSum += i;
             q.enqueue(i);
         }
-        assertFalse(iter.hasNext());
 
+        Iterator<Integer> iter = q.iterator();
         for (int i = 0; i < nums; i++) {
             testSum += iter.next();
         }
