@@ -1,6 +1,7 @@
 # Princeton algs4
 algs4.jar
 algs4-data/
+*.zip
 
 # Mac
 .DS_Store
