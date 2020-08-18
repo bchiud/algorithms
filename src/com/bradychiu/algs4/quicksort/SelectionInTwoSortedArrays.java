@@ -4,21 +4,21 @@ import edu.princeton.cs.algs4.StdOut;
 
 public class SelectionInTwoSortedArrays {
 
-    private static Comparable medianMergeSort(Comparable[] a, Comparable[] b) {
+    private static Comparable medianMerge(Comparable[] a, Comparable[] b) {
         int n = a.length + b.length;
         int k = n / 2;
 
         if (a[0] instanceof Number && n % 2 == 0) {
-            int lower = (Integer) kthElementMergeSort(a, b, k);
-            int upper = (Integer) kthElementMergeSort(a, b, k + 1);
+            int lower = (Integer) kthElementMerge(a, b, k);
+            int upper = (Integer) kthElementMerge(a, b, k + 1);
             return (lower + upper) / 2.0;
         } else {
-            return kthElementMergeSort(a, b, k + 1);
+            return kthElementMerge(a, b, k + 1);
         }
     }
 
     // O(k) since we stop at k merges; O(m+n) if we don't
-    private static Comparable kthElementMergeSort(Comparable[] a, Comparable[] b, int k) {
+    private static Comparable kthElementMerge(Comparable[] a, Comparable[] b, int k) {
         int i = 0; // a index
         int j = 0; // b index
         int m = a.length;
@@ -59,7 +59,7 @@ public class SelectionInTwoSortedArrays {
 
     /**
      * https://stackoverflow.com/a/29352604/3195226
-     * O(log k) == O(log m + log n)
+     * O(log k)
      */
 
     private static Comparable kthElementBinarySearch(Comparable[] a, Comparable[] b, int ai, int bi, int an, int bn, int k) {
@@ -85,10 +85,10 @@ public class SelectionInTwoSortedArrays {
     public static void main(String[] args) {
         // Integer[] a = {3, 12, 13, 14, 21, 29, 35, 36, 38, 40, 41}; // {0, 2, 4, 6};
         // Integer[] b = {-5, -3, 1, 5, 7, 9, 10, 11, 13, 14, 19}; // {1, 3, 5, 7};
-        Integer[] a = {0, 2, 4, 6};
-        Integer[] b = {1, 3, 5, 7};
-        // StdOut.println(medianMergeSort(a, b));
-        // StdOut.println(kthElementMergeSort(a, b, 5));
+        Integer[] a = {0, 2, 4, 6, 8, 10};
+        Integer[] b = {1, 3, 5, 7, 9, 11};
+        // StdOut.println(medianMerge(a, b));
+        StdOut.println(kthElementMerge(a, b, 5));
         // StdOut.println(medianBinarySearch(a, b));
         StdOut.println(kthElementBinarySearch(a, b, 5));
     }
