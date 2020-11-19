@@ -1,7 +1,6 @@
 package com.bradychiu.algs4.directedgraphs;
 
 import edu.princeton.cs.algs4.Digraph;
-import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.Stack;
 import org.junit.jupiter.api.Test;
 

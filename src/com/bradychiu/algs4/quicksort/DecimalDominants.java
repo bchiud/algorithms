@@ -1,6 +1,5 @@
 package com.bradychiu.algs4.quicksort;
 
-import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdOut;
 
 import java.util.*;
